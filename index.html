@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html ng-app="myapp">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body class="Search">
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div class="wrapper">
+        <div ng-controller="people">
+            <div class="searchinput">
+                <i class="fa fa-search"></i><input type="text" name="filterbyName" id="name" class="form-control" placeholder="Search Employee by Extension.."
+                />
+            </div>
+            <div class="searchResults">
+                <div class="infoRow" ng-repeat="peopledb in peopledata | filterbyName">
+                    <div class="col-md-3">
+                        <img class="" ng-src="" />
+                    </div>
+                    <div class="col-md-5">
+                        <h4>{{peopledb.name}}</h4>
+                        <p>{{peopledb.designation}}</p>
+                    </div>
+                    <div class="text-right col-md-4">
+                        <h4><i class="fa fa-phone fa-2x"></i><span>{{peopledb.extension}}
+                        </span>
+                        </h4>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    <!--<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>-->
+    <script src="js/controllers/maincontroller.js"></script>
+    <!--<script src="js/services/dataservice.js"></script>-->
+    <script src="js/custom/main.js"></script>
+</body>
+
+</html>
